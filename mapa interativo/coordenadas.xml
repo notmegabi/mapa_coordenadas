@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<coordenadas>
+  <ponto>
+    <nome>Sao Paulo</nome>
+    <latitude>-23.5505</latitude>
+    <longitude>-46.6333</longitude>
+  </ponto>
+  <ponto>
+    <nome>Rio de Janeiro</nome>
+    <latitude>-22.9068</latitude>
+    <longitude>-43.1729</longitude>
+  </ponto>
+</coordenadas>

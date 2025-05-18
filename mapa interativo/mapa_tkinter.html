@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9008a3be38472ad29d04e0a43fccda98 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9008a3be38472ad29d04e0a43fccda98" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9008a3be38472ad29d04e0a43fccda98 = L.map(
+                "map_9008a3be38472ad29d04e0a43fccda98",
+                {
+                    center: [-23.228650000000002, -44.903099999999995],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b49e8ceef9fdc18f2ab133b51c90da3b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b49e8ceef9fdc18f2ab133b51c90da3b.addTo(map_9008a3be38472ad29d04e0a43fccda98);
+        
+    
+            var marker_278ced33af5518ec4aa5a2a284ca7daa = L.marker(
+                [-23.5505, -46.6333],
+                {
+}
+            ).addTo(map_9008a3be38472ad29d04e0a43fccda98);
+        
+    
+        var popup_09fe48a8f1d88f0ed298483bd486fcfb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a6abfd233c7a1a3cd99c3c4e4a62527 = $(`<div id="html_6a6abfd233c7a1a3cd99c3c4e4a62527" style="width: 100.0%; height: 100.0%;"><b>Sao Paulo</b><br>Latitude: -23.5505<br>Longitude: -46.6333</div>`)[0];
+                popup_09fe48a8f1d88f0ed298483bd486fcfb.setContent(html_6a6abfd233c7a1a3cd99c3c4e4a62527);
+            
+        
+
+        marker_278ced33af5518ec4aa5a2a284ca7daa.bindPopup(popup_09fe48a8f1d88f0ed298483bd486fcfb)
+        ;
+
+        
+    
+    
+            var marker_d3ceba8d86b59c84a3bd45eea62566f6 = L.marker(
+                [-22.9068, -43.1729],
+                {
+}
+            ).addTo(map_9008a3be38472ad29d04e0a43fccda98);
+        
+    
+        var popup_50f2a913a4fd178fb942fcd8c91ed361 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85201cb348bd62f861c7e6a4babe6b2d = $(`<div id="html_85201cb348bd62f861c7e6a4babe6b2d" style="width: 100.0%; height: 100.0%;"><b>Rio de Janeiro</b><br>Latitude: -22.9068<br>Longitude: -43.1729</div>`)[0];
+                popup_50f2a913a4fd178fb942fcd8c91ed361.setContent(html_85201cb348bd62f861c7e6a4babe6b2d);
+            
+        
+
+        marker_d3ceba8d86b59c84a3bd45eea62566f6.bindPopup(popup_50f2a913a4fd178fb942fcd8c91ed361)
+        ;
+
+        
+    
+</script>
+</html>

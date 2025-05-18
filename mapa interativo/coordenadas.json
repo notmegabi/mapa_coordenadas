@@ -1,0 +1,14 @@
+{
+    "coordenadas": [
+        {
+            "nome": "Sao Paulo",
+            "latitude": -23.5505,
+            "longitude": -46.6333
+        },
+        {
+            "nome": "Rio de Janeiro",
+            "latitude": -22.9068,
+            "longitude": -43.1729
+        }
+    ]
+}
