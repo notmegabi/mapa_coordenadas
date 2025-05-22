@@ -13,6 +13,7 @@ from xml.dom import minidom
 class MapaTkinterApp:
     def __init__(self, root):
         self.root = root
+        self.ultimo_arquivo_carregado = None
         self.root.title("Visualização de Coordenadas no Mapa")
 
         self.style = ttk.Style(root)
@@ -30,7 +31,6 @@ class MapaTkinterApp:
         self.nome_arquivo_xml = "sete_maravilhasa.xml"
         self.nome_arquivo_csv = "sete_maravilhasn.csv"
         self.coordenadas = self.carregar_coordenadas()
-        self.atualizar_mapa()
 
         self.frame_importar = ttk.LabelFrame(root, text="Mapas disponíveis:")
         self.frame_importar.pack(padx=20, pady=20, fill="x")
@@ -47,16 +47,10 @@ class MapaTkinterApp:
         self.btn_mostrar_tabela = ttk.Button(root, text="Mostrar Tabela de Coordenadas", command=self.mostrar_tabela_coordenadas)
         self.btn_mostrar_tabela.pack(pady=15, padx=20, fill="x")
 
-        self.lbl_instrucao = ttk.Label(root, text="Escolha uma das opções.")
+        self.lbl_instrucao = ttk.Label(root, text="Escolha uma opção.")
         self.lbl_instrucao.pack(pady=15)
 
     def carregar_coordenadas(self):
-        if os.path.exists(self.nome_arquivo_json):
-            return self.importar_json_interno(self.nome_arquivo_json)
-        elif os.path.exists(self.nome_arquivo_xml):
-            return self.importar_xml_interno(self.nome_arquivo_xml)
-        elif os.path.exists(self.nome_arquivo_csv):
-            return self.importar_csv_interno(self.nome_arquivo_csv)
         return []
 
     def importar_json_interno(self, file_path):
@@ -81,7 +75,8 @@ class MapaTkinterApp:
                 nome = ponto.find('nome').text if ponto.find('nome') is not None else ''
                 latitude = float(ponto.find('latitude').text)
                 longitude = float(ponto.find('longitude').text)
-                coordenadas.append({'nome': nome, 'latitude': latitude, 'longitude': longitude})
+                imagem = ponto.find('imagem').text if ponto.find('imagem') is not None else ''
+                coordenadas.append({'nome': nome, 'latitude': latitude, 'longitude': longitude, 'imagem': imagem})
             return coordenadas
         except Exception as e:
             messagebox.showerror("Erro", f"Erro ao ler arquivo XML '{file_path}': {e}")
@@ -90,10 +85,10 @@ class MapaTkinterApp:
     def importar_csv_interno(self, file_path):
         try:
             df = pd.read_csv(file_path)
-            if 'latitude' in df.columns and 'longitude' in df.columns:
+            if 'latitude' in df.columns and 'longitude' in df.columns and 'imagem' in df.columns:
                 return df.to_dict('records')
             else:
-                messagebox.showerror("Erro", f"Arquivo CSV '{file_path}' inválido.")
+                messagebox.showerror("Erro", f"Arquivo CSV '{file_path}' inválido. Certifique-se de ter 'latitude', 'longitude' e 'imagem' como colunas.")
                 return []
         except Exception as e:
             messagebox.showerror("Erro", f"Erro ao ler arquivo CSV '{file_path}': {e}")
@@ -111,14 +106,31 @@ class MapaTkinterApp:
         if not gdf.empty:
             mean_lat = gdf['latitude'].mean()
             mean_lon = gdf['longitude'].mean()
-            m = folium.Map(location=[mean_lat, mean_lon], zoom_start=2)
+
+            if self.ultimo_arquivo_carregado == self.nome_arquivo_xml:
+                zoom_inicial = 6
+            else:
+                zoom_inicial = 3
+
+            m = folium.Map(location=[mean_lat, mean_lon], zoom_start=zoom_inicial)
+
             for index, row in gdf.iterrows():
                 nome = row.get('nome', 'Sem Nome')
                 latitude = row['latitude']
                 longitude = row['longitude']
+                imagem = row.get('imagem', None)
+
+                popup_html = f"<b>{nome}:</b><br>Latitude: {latitude}<br>Longitude: {longitude}"
+
+                if imagem:
+                    if os.path.join(os.path.join("imagens", imagem)):
+                        popup_html += f"<br><img src='imagens/{imagem}' width='150px'>"
+                    else:
+                        popup_html += f"<br>Imagem não encontrada: {imagem}"
+
                 folium.Marker(
                     location=[latitude, longitude],
-                    popup=f"<b>{nome}:</b><br>{latitude}<br>{longitude}", icon=folium.Icon(icon = "glyphicon glyphicon-pushpin")
+                    popup=folium.Popup(popup_html, max_width=300)
                 ).add_to(m)
         else:
             m = folium.Map(location=[0, 0], zoom_start=2)
@@ -138,16 +150,19 @@ class MapaTkinterApp:
 
     def carregar_e_abrir_json(self):
         self.coordenadas = self.importar_json_interno(self.nome_arquivo_json)
+        self.ultimo_arquivo_carregado = self.nome_arquivo_json
         self.atualizar_mapa()
         self.abrir_mapa()
 
     def carregar_e_abrir_xml(self):
         self.coordenadas = self.importar_xml_interno(self.nome_arquivo_xml)
+        self.ultimo_arquivo_carregado = self.nome_arquivo_xml
         self.atualizar_mapa()
         self.abrir_mapa()
 
     def carregar_e_abrir_csv(self):
         self.coordenadas = self.importar_csv_interno(self.nome_arquivo_csv)
+        self.ultimo_arquivo_carregado = self.nome_arquivo_csv
         self.atualizar_mapa()
         self.abrir_mapa()
 
