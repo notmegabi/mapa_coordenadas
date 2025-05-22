@@ -1,0 +1,39 @@
+{
+    "coordenadas": [
+        {
+            "nome": "Muralha da China",
+            "latitude": 40.43203,
+            "longitude": 116.57040
+        },
+        {
+            "nome": "Cristo Redentor",
+            "latitude": -22.95177,
+            "longitude": -43.21049
+        },
+        {
+            "nome": "Machu Picchu",
+            "latitude": -13.16306,
+            "longitude": -72.54479
+        },
+        {
+            "nome": "Chichen Itza",
+            "latitude": 20.68436,
+            "longitude": -88.56746 
+        },
+        {
+            "nome": "Coliseu",
+            "latitude": 41.9099,
+            "longitude": 12.5182
+        },
+        {
+            "nome": "Petra",
+            "latitude": 30.32874,
+            "longitude": 35.44485
+        },
+        {
+            "nome": "Taj Mahal",
+            "latitude": 27.17528,
+            "longitude": 78.04222
+        }
+    ]
+}
