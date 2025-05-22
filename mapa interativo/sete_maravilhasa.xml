@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<coordenadas>
+  <ponto>
+    <nome>Grande Piramide de Gize</nome>
+    <latitude>29.9792</latitude>
+    <longitude>31.1344</longitude>
+  </ponto>
+  <ponto>
+    <nome>Jardins Suspensos da Babilonia</nome>
+    <latitude>32.5356</latitude>
+    <longitude>44.4275</longitude>
+  </ponto>
+  <ponto>
+    <nome>Templo de Artemis</nome>
+    <latitude>37.9498</latitude>
+    <longitude>27.3913</longitude>
+  </ponto>
+  <ponto>
+    <nome>Estatua de Zeus em Olimpia</nome>
+    <latitude>37.638</latitude>
+    <longitude>21.6575</longitude>
+  </ponto>
+  <ponto>
+    <nome>Mausoleu de Halicarnasso</nome>
+    <latitude>37.038</latitude>
+    <longitude>27.4516</longitude>
+  </ponto>
+  <ponto>
+    <nome>Colosso de Rodes</nome>
+    <latitude>36.4512</latitude>
+    <longitude>28.2553</longitude>
+  </ponto>
+  <ponto>
+    <nome>Farol de Alexandria</nome>
+    <latitude>31.2139</latitude>
+    <longitude>29.913</longitude>
+  </ponto>
+</coordenadas>
