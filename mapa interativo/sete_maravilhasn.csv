@@ -1,8 +1,8 @@
-nome,latitude,longitude
-Floresta Amazonica,-3.46411,-62.21588
-Baia de Ha Long,20.81648,107.17747
-Cataratas do Iguacu,-25.69052,-54.44071
-Ilha de Jeju,33.37612,126.54330
-Komodo,-8.56532,119.43849
-Parque Nacional de Puerto Princesa,10.19423,118.92696
-Montanha de Mesa,-33.96611,18.42561
+nome,latitude,longitude,imagem
+Floresta Amazonica,-3.46411,-62.21588,amazonia.jpg
+Baia de Ha Long,20.81648,107.17747,halong.jfif
+Cataratas do Iguacu,-25.69052,-54.44071,iguacu.jpg
+Ilha de Jeju,33.37612,126.54330,jeju.jpg
+Komodo,-8.56532,119.43849,komodo.jpg
+Parque Nacional de Puerto Princesa,10.19423,118.92696,princesa.jpg
+Montanha de Mesa,-33.96611,18.42561,montanha.jpg
