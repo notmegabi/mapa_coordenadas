@@ -3,37 +3,44 @@
         {
             "nome": "Muralha da China",
             "latitude": 40.43203,
-            "longitude": 116.57040
+            "longitude": 116.57040,
+            "imagem": "muralha.jpg"
         },
         {
             "nome": "Cristo Redentor",
             "latitude": -22.95177,
-            "longitude": -43.21049
+            "longitude": -43.21049,
+            "imagem": "cristo.jpg"
         },
         {
             "nome": "Machu Picchu",
             "latitude": -13.16306,
-            "longitude": -72.54479
+            "longitude": -72.54479,
+            "imagem": "machu.jpg"
         },
         {
             "nome": "Chichen Itza",
             "latitude": 20.68436,
-            "longitude": -88.56746 
+            "longitude": -88.56746,
+            "imagem": "chichen.jfif" 
         },
         {
             "nome": "Coliseu",
             "latitude": 41.9099,
-            "longitude": 12.5182
+            "longitude": 12.5182,
+            "imagem": "coliseu.jpg"
         },
         {
             "nome": "Petra",
             "latitude": 30.32874,
-            "longitude": 35.44485
+            "longitude": 35.44485,
+            "imagem": "petra.jpg"
         },
         {
             "nome": "Taj Mahal",
             "latitude": 27.17528,
-            "longitude": 78.04222
+            "longitude": 78.04222,
+            "imagem": "taj.jpg"
         }
     ]
 }
