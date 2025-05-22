@@ -13,6 +13,6 @@ Processe dados geoespaciais em múltiplos formatos (JSON, XML, CSV). Gere visual
 
 Como o sistema funciona:
 
-Interface visual com opções para adicionar novas coordenadas, caixa com as coordenadas atuais salvas e botão para abrir o mapa no navegador.
+Importa as coordenadas de 3 arquivos diferentes, sendo JSON (Sete Maravilhas do Mundo Moderno), XML (Sete Maravilhas do Mundo Antigo) e CSV (Sete Maravilhas Naturais do Mundo).
 
-Toda vez que novas coordenadas são adicionadas, os arquivos em JSON, XML e CSV são atualizados automaticamente.
+Na interface, existem 4 opções, sendo 1 para cada mapa com suas coordenadas e 1 para abrir a tabela com todas as informações.
